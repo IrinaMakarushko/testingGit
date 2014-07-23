@@ -1,0 +1,40 @@
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//ApacheSoftwareFoundation//DTDTilesConfiguration2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+    <definition name="template" template="/main_template.jsp">
+        <put-attribute name="title" value="Default Title"/>
+        <put-attribute name="header" value="/jsp/tiles/header.jsp"/>
+        <put-attribute name="footer" value="/jsp/tiles/footer.jsp"/>
+        <put-attribute name="script" value="/jsp/tiles/script.jsp"/>
+        <put-attribute name="style" value="/jsp/tiles/style.jsp"/>
+        <put-attribute name="login" value="/jsp/login.jsp"/>
+    </definition>
+
+    <definition name="home" extends="template">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="content" value="/jsp/home.jsp"/>
+    </definition>
+
+    <definition name="order" extends="template">
+        <put-attribute name="title" value="Orders Page"/>
+        <put-attribute name="content" value="/jsp/order.jsp"/>
+    </definition>
+
+    <definition name="menu" extends="template">
+        <put-attribute name="title" value="Menu" />
+        <put-attribute name="content" value="/jsp/menu.jsp" />
+    </definition>
+
+    <definition name="dashboard" extends="template">
+        <put-attribute name="title" value="Dashboard"/>
+        <put-attribute name="content" value="/jsp/dashboard.jsp"/>
+    </definition>
+
+    <definition name="users" extends="template">
+        <put-attribute name="title" value="Users"/>
+        <put-attribute name="content" value="/jsp/users.jsp"/>
+    </definition>
+</tiles-definitions>

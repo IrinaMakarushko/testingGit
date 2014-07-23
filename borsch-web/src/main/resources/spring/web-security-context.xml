@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+    <global-method-security pre-post-annotations="enabled" />
+
+    <http use-expressions="true">
+
+        <intercept-url pattern="/" access="permitAll"/>
+
+        <intercept-url pattern="/order/**" access="hasRole('ADMIN')"/>
+        <intercept-url pattern="/menu/**" access="hasAnyRole('ADMIN', 'USER')"/>
+        <intercept-url pattern="/users/**" access="hasRole('SUPER_ADMIN')"/>
+        <intercept-url pattern="/dashboard/**" access="hasAnyRole('USER', 'ADMIN')"/>
+
+        <intercept-url pattern="/login" access="permitAll"/>
+        <intercept-url pattern="/login.jsp" access="permitAll"/>
+
+        <form-login login-page="/login" default-target-url="/"/>
+        <logout invalidate-session="true" logout-success-url="/login" logout-url="/logout"/>
+        <remember-me/>
+
+        <access-denied-handler error-page="/"/>
+        <!-- Uncomment to limit the number of sessions a user can have -->
+        <!--<session-management invalid-session-url="/timeout.jsp">-->
+        <!--<concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />-->
+        <!--</session-management>-->
+    </http>
+
+</beans:beans>

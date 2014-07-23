@@ -1,0 +1,80 @@
+.rounded-black-border {
+    border:1px solid black;
+    border-radius: 10px;
+}
+
+.yellowish-background {
+    background: #FFFF66;
+}
+
+.reddish-background {
+    background: #FF9966;
+}
+
+.brown-background {
+    background: #b47628;
+}
+
+.pleasant-opacity {
+    opacity: 0.8;
+}
+
+.brown-shadows {
+    box-shadow: 10px 10px 5px #996600;
+}
+
+#menu {
+    width: auto;
+    height: auto;
+    overflow: auto;
+}
+
+.menu-nav {
+    width: 200px;
+    height: auto;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 40px;
+    padding: 10px;
+    position: relative;
+    float: left;
+}
+
+.menu-nav>div {
+    margin-bottom: 10px;
+}
+
+.listWithoutDots {
+    list-style-type: none;
+}
+
+.listWithoutDots>li {
+    cursor: pointer;
+}
+
+#menuItems {
+    position: relative;
+    float: left;
+    margin-top: 5px;
+}
+
+#menuItems>#daySkeleton {
+    display: none;
+}
+
+#menuItems>div {
+    width: 200px;
+    position: relative;
+    float: left;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+#menuItems>div>div>form>input {
+    width: 100px;
+}
+
+#menuItems>div>div>strong {
+    color: #0a0001;
+    display: none;
+}

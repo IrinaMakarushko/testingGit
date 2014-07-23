@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <mvc:annotation-driven/>
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.exadel.borsch.web.controller"/>
+
+    <mvc:resources mapping="/assets/**" location="/assets/"/>
+    <mvc:view-controller path="/login" view-name="login"/>
+
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" p:defaultLocale="en"/>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"
+          p:basename="messages"/>
+
+    <mvc:interceptors>
+        <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+              p:paramName="lang"/>
+    </mvc:interceptors>
+
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/tiles-views.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.tiles2.TilesViewResolver"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/jsp/" p:suffix=".jsp"/>
+
+
+    <!--mvc:view-controller is better approach see https://jira.springsource.org/browse/ROO-470-->
+    <!--<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">-->
+    <!--<property name="defaultHandler">-->
+    <!--&lt;!&ndash; If no @Controller match, map path to a view to render; e.g. the "/index" path would map to the view named "index". &ndash;&gt;  -->
+    <!--<bean class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>-->
+    <!--</property>-->
+    <!--</bean>-->
+
+</beans>

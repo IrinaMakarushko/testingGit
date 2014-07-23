@@ -1,0 +1,148 @@
+@background-color :     #F1F1F1;
+@new-message-color :    #FFF85A;
+@message-hover-color:   #EBF506;
+@border-color :         #594164;
+@box-shadow-color-outer:#b47628;
+@box-shadow-color-inner:#bb611a;
+@text-color :           #000000;
+
+#messages-page {
+    font-size: 15px;
+    height: 550px;
+    color: @text-color;
+    min-width: 1010px;
+}
+
+.sidebar{
+    position: relative;
+    width: 383px;
+    color: #000000;
+    height: 500px;
+    margin : 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 6px @box-shadow-color-outer,
+                0px 0px 0px 7px @box-shadow-color-inner;
+}
+
+.wrapper {
+    position: absolute;
+    height : 100%;
+    width : 400px;
+    top: 0;
+    left: 0;
+    overflow-y : scroll;
+    overflow-x : hidden;
+}
+
+.new-message {
+    background-color: @new-message-color;
+}
+
+.read-message {
+    background-color: @background-color;
+}
+
+.cell {
+    display: inline-block;
+    min-height: 40px;
+    width: 98%;
+    padding-left: 10px;
+}
+
+.action-button {
+    float : right;
+    width : 15px;
+    height : 15px;
+    margin-right: 8px;
+    margin-top: 5px;
+}
+
+.user-cell {
+    height : 60px;
+}
+
+.background-common {
+    background-color: @background-color;
+    opacity: 0.6;
+}
+
+#new-message-textarea {
+    height: 150px;
+    width: 98%;
+}
+
+.inline {
+    display: inline;
+}
+
+.right-bordered {
+    border-right : solid 2px @border-color;
+}
+
+.left-bordered {
+    border-left : solid 2px @border-color;
+}
+
+.top-bordered {
+    border-top : solid 2px @border-color;
+}
+
+.bottom-bordered {
+    border-bottom : solid 2px @border-color;
+}
+
+.wide-bordered {
+    border : 2px @border-color solid;
+}
+
+.thick-bordered {
+    border : 1px @border-color solid;
+}
+
+.full-height {
+    position: relative;
+    height: 100%;
+}
+
+.margined-sides {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.message-area {
+    width: 230px;
+}
+
+.message-area:hover {
+    background-color: @message-hover-color;
+    cursor: pointer;
+}
+
+.author-cell {
+    width: 100px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#search {
+    margin-left: 5%;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+
