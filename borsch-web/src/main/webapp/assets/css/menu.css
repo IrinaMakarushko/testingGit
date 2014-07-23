@@ -26,7 +26,7 @@
 #menu {
     width: auto;
     height: auto;
-  
+
 }
 
 .menu-nav {
@@ -63,7 +63,7 @@
 }
 
 #menuItems>div {
-    width: 200px;
+
     position: relative;
     float: left;
     margin-top: 5px;
